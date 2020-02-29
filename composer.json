@@ -1,0 +1,20 @@
+{
+    "name": "henrique/htron-theme-template",
+    "description": "Wordpress theme template",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Henrique de Oliveira",
+        "email": "henrique@htron-dev.com"
+      }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "HtronTheme\\Includes\\": "./includes",
+        "HtronTheme\\Views\\": "./views"
+      }
+    }
+  }
+  
