@@ -4,7 +4,8 @@
   "description": "htron wordpress theme ",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack --watch",
+    "serve": "NODE_ENV=development webpack --watch",
+    "docker": "docker-compose up",
     "build": "NODE_ENV=production webpack"
   },
   "author": "Henrique de Oliveira",
