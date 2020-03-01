@@ -30,3 +30,5 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_TABLE_PREFIX: hwp
       WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA:  |
+        define('FS_METHOD','direct');
