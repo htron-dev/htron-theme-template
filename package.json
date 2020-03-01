@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "NODE_ENV=development webpack --watch",
-    "docker": "docker-compose up",
+    "docker": "npm run build && docker-compose up",
     "build": "NODE_ENV=production webpack"
   },
   "author": "Henrique de Oliveira",
