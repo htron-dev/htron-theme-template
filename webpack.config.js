@@ -6,7 +6,7 @@ module.exports = {
     entry: "./assets/js/index.js",
     mode: process.env.NODE_ENV,
     output: {
-        path: path.resolve(__dirname, 'assets/dist'),
+        path: path.resolve(__dirname, 'assets/dist/js'),
         filename: "main.js",
         hotUpdateChunkFilename: 'hot/hot-update.js',
         hotUpdateMainFilename: 'hot/hot-update.json'
@@ -40,8 +40,8 @@ module.exports = {
       new BrowserSyncPlugin({
         open: false,
         host: "localhost",
-        proxy: "localhost:8000",
-        port: "8000",
+        proxy: "localhost:8080",
+        port: "8080",
         files: ["./**/*.php", "./assets/js/**/*.js"],
         reloadDelay: 0
       }),
