@@ -1,2 +1,2 @@
 // import styles
-import "./../sass/index.scss"
+import "./../sass/index.scss";

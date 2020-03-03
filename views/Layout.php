@@ -28,12 +28,9 @@ class Layout {
         $this->body = $body;
     }
     function setHeader(string $header = null) {
-        if(!$header) {
-            $this->header .= "<header class='bg-warning container-fluid mb-4'>";
-            $this->header .= "<div class='row'>";
-            $this->header .= "Header";
-            $this->header .= "</div>";
-            $this->header .= "</header>";
+        if (!$header) {
+            $header = new \HtronTheme\Includes\Header\DefaultHeader();
+            $this->header = $header->get_html();
         }
     }
 
@@ -56,7 +53,6 @@ class Layout {
         if($this->options->header){
             get_header();
             echo $this->header;
-          
         }
 
         echo $this->html;

@@ -13,8 +13,8 @@ class Home extends Layout {
         $html .= "<div class='card-body'>";
         
         $html .= "<h5 class='card-title'>$post_card->title</h5>";
+        $html .= "<p class='card-text text-secondary'><small>$post_card->date</small></p>";
         $html .= "<p class='card-text'>$post_card->excerpt</p>";
-        $html .= "<p class='card-text'><small>$post_card->date</small></p>";
 
         $html .= "</div>"; // body
 
