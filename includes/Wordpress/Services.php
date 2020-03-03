@@ -21,7 +21,8 @@ final class Services {
     }
     public static function get_services () {
         return [
-            Enqueue::class
+            Enqueue::class,
+            Menu::class,
         ];
     }
     public function instantiate (contructor $class) {

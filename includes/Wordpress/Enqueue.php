@@ -15,7 +15,7 @@ class Enqueue {
         });
     }
     public function register_enqueues() {
-        wp_register_script( "main", get_template_directory_uri() . "/assets/dist/main.js", array ( "jquery" ), 1.1, true);
+        wp_register_script( "main", get_template_directory_uri() . "/assets/dist/main.js", [], 1.1, true);
         wp_register_style( "main", get_template_directory_uri() . "/assets/dist/css/main.css",false,"1.1","all");
     }
     public function enqueue_files () {
