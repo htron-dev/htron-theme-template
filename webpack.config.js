@@ -6,7 +6,7 @@ module.exports = {
     entry: "./assets/js/index.js",
     mode: process.env.NODE_ENV,
     output: {
-        path: path.resolve(__dirname, 'assets/dist/js'),
+        path: path.resolve(__dirname, 'assets/dist'),
         filename: "main.js",
         hotUpdateChunkFilename: 'hot/hot-update.js',
         hotUpdateMainFilename: 'hot/hot-update.json'
