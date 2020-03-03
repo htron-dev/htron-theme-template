@@ -3,7 +3,7 @@ version: '3.3'
 services:
   db:
     image: mysql:5.7
-    restart: always
+    restart: on-failure
     container_name: htron-theme-mysql
     environment:
       MYSQL_ROOT_PASSWORD: htronWpTheme
@@ -16,7 +16,7 @@ services:
   wordpress:
     image: wordpress:latest
     container_name: htron-theme-wordpress
-    restart: always
+    restart: on-failure
     depends_on:
       - db
     ports:
