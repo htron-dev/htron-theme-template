@@ -8,13 +8,16 @@ class Home extends Layout {
         $html = "<div class='card mb-4'>";
         
         if ($post_card->thumbnail_url) {
-            $html .= "<img  class='card-img-top'  src='$post_card->thumbnail_url'>";
+            $html .= "<a href='$post_card->permalink'><img  class='card-img-top'  src='$post_card->thumbnail_url'></a>";
         }
         $html .= "<div class='card-body'>";
         
-        $html .= "<h5 class='card-title'>$post_card->title</h5>";
+        $html .= "<h2 class='h4  card-title'><a class='card-link' href='$post_card->permalink'>$post_card->title</a></h2>";
         $html .= "<p class='card-text text-secondary'><small>$post_card->date</small></p>";
         $html .= "<p class='card-text'>$post_card->excerpt</p>";
+        $html .= "<div class='text-right'>";
+        $html .= "<a href='$post_card->permalink' class='btn btn-primary'>". __("Read more", "htronthemetemplate") ."</a>";
+        $html .= "</div>";
 
         $html .= "</div>"; // body
 
@@ -30,6 +33,7 @@ class Home extends Layout {
                 $post_card->thumbnail_url = get_the_post_thumbnail_url();
                 $post_card->excerpt = get_the_excerpt();
                 $post_card->date = get_post_time("Y-m-d");
+                $post_card->permalink = get_permalink();
                 $this->addPost($post_card);
             endwhile;
             $this->setBody($this->posts_html);

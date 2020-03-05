@@ -16,27 +16,13 @@
 }
 .htron-theme-header-menu {
     a.nav-link {
-        color: var(--info);
+        color: var(--secondary);
         text-transform: uppercase;
         font-size: 0.9rem;
         position: relative;
-        &:before{
-            position: absolute;
-            left: 0px;
-            width: 100%;
-            height: 1px;
-            background-color: var(--info);
-            content: "";
-            opacity: 0;
-            transition: all 0.3s;
-            bottom: 0px;
-            transform: translateY(5px);
-        }
-        &:hover{
-            &:before{
-                opacity: 1;
-                transform: translateY(0px);
-            }
+        &:hover {
+            text-decoration: none;
+            color: var(--info);
         }
     }
 }
