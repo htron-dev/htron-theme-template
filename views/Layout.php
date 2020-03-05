@@ -5,7 +5,7 @@ class Layout {
     private $html;
     private $header;
     private $footer;
-    private $sidebar = "<aside class='bg-secondary col-12 col-md-4'>side</aside>";
+    private $sidebar;
     private $body;
     private $options;
     
@@ -17,11 +17,14 @@ class Layout {
             $this->options->footer = true;
             // set header
             $this->setHeader();
+            $this->setSidebar();
         }
     }
-
-    function setSidebar (string $sidebar) {
-        $this->sidebar = $sidebar;
+    // set name of sidebar
+    function setSidebar (string $sidebar = null) {
+        if(!$sidebar) {
+            $this->sidebar = "htron-theme-sidebar";
+        }
     }
 
     function setBody (string $body) {
@@ -36,26 +39,28 @@ class Layout {
 
     function render(){
         
-        $this->html .= "<div class='container'>";        
-        $this->html .= "<div class='row'>";
-        $this->html .= "<main class='col-12 col-md-8'>";
-        $this->html .= $this->body;
-        $this->html .= "</main>";
-        
-        if($this->options->sidebar){
-            $this->html .= $this->sidebar;
-        }
-        
-        $this->html .= "</div>"; // row
-        $this->html .= "</div>"; // container
-        
         // if wanna show header
         if($this->options->header){
             get_header();
             echo $this->header;
         }
 
-        echo $this->html;
+        echo "<div class='container'>";
+        echo "<div class='row'>";
+        
+        echo "<main class='col-12 col-md'>";
+        echo $this->body;
+        echo "</main>";
+        
+        // if wanna show sidebar
+        if($this->options->sidebar && is_active_sidebar($this->sidebar)){
+            echo "<aside class='htron-theme-sidebar col-12 col-md-4 border'>";
+            get_sidebar($this->sidebar);
+            echo "</aside>";
+        }
+        
+        echo "</div>"; // row
+        echo "</div>"; // container
         
         // if wanna show footer
         if($this->options->footer){

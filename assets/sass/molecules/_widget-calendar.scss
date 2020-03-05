@@ -1,0 +1,17 @@
+table#wp-calendar {
+    width: 100%;
+    &, th, td {
+        border: 1px solid var(--secondary);
+    }
+    th, td {
+        padding: 0.2rem 0.5rem;
+    }
+    tbody, thead {
+        text-align: center;
+    }
+    tfoot {
+        td, th {
+            border: none;
+        }
+    }
+}
