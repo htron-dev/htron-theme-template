@@ -48,7 +48,7 @@ class Layout {
         echo "<div class='container'>";
         echo "<div class='row'>";
         
-        echo "<main class='col-12 col-md'>";
+        echo "<main class='col-12 col-md-8'>";
         echo $this->body;
         echo "</main>";
         
