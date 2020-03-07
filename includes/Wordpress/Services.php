@@ -24,6 +24,7 @@ final class Services {
             Enqueue::class,
             Menu::class,
             Sidebar::class,
+            Pagination::class
         ];
     }
     public function instantiate (contructor $class) {

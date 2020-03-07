@@ -24,6 +24,10 @@ class Home extends Layout {
         $html .= "</div>";
         $this->posts_html .= $html;
     }
+    public function setPagination () {
+        $pagination = new \HtronTheme\Includes\Pagination\PostsPagination();
+        $this->posts_html .= $pagination->get_html();
+    }
 
     public function render () {
         if (have_posts()) :
@@ -36,6 +40,8 @@ class Home extends Layout {
                 $post_card->permalink = get_permalink();
                 $this->addPost($post_card);
             endwhile;
+            
+            $this->setPagination();
             $this->setBody($this->posts_html);
         endif;
         parent::render();
